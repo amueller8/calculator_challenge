@@ -2,9 +2,24 @@ import logo from './logo.svg';
 import React from 'react';
 //import React from 'react-dom';
 import './App.css';
-import bigeval from 'bigeval';
 
+
+
+/*
+ideally i would make calculator buttons react components,
+i had pivoted from a different idea so rn they are just normal buttons
+*/
 function App() {
+  const [data, setData] = React.useState(null);
+
+  React.useEffect(() => {
+    fetch("/api")
+      .then((res) => res.json())
+      .then((data) => setData(data.message));
+  }, []);
+
+
+
   return (
     <div className="App">
       <div id = 'test'></div>

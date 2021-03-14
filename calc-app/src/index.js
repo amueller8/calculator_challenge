@@ -7,6 +7,8 @@ import reportWebVitals from './reportWebVitals';
 import bigeval from 'bigeval';
 import $ from 'jquery';
 
+const fs = require('fs')
+
 
 $(document).ready(function(){
 
@@ -29,6 +31,14 @@ $(document).ready(function(){
       var doneCalc = Obj.exec(calculation);
       $('#output').append("<p> user: " + calculation + " = "+ doneCalc + "</p>");
       // add to database
+
+      var content = calculation + " = " + doneCalc;
+      try {
+        const data = fs.writeFileSync('/Users/flavio/test.txt', content)
+        //file written successfully
+      } catch (err) {
+        console.error(err)
+      }
  
       
       calculation = "";
@@ -50,6 +60,8 @@ $(document).ready(function(){
      
    
   });
+
+
 
 });
   
