@@ -10,6 +10,12 @@ ideally i would make calculator buttons react components,
 i had pivoted from a different idea so rn they are just normal buttons
 */
 function App() {
+
+  /*
+  This was when I was trying to implement some form of backend info.
+  I had set up a server on a different port but I never got any data/messages
+  sending.
+  */
   const [data, setData] = React.useState(null);
 
   React.useEffect(() => {
@@ -25,7 +31,16 @@ function App() {
       <div id = 'test'></div>
 
       <div className = "calculator container" id = 'calculator'>
-      
+        <div className = "row">
+        <div className = "col-12" id = 'name-row'>
+            <label for = "name">User's name: </label>
+            <input id = 'name' type = "text"></input>
+            <button id = 'name-button'>Go</button>
+
+        </div>
+
+
+        </div>
         <div className = "row">
           <div className = "col-12">
             <p id = 'disp'></p>   

@@ -7,15 +7,19 @@ import reportWebVitals from './reportWebVitals';
 import bigeval from 'bigeval';
 import $ from 'jquery';
 
-const fs = require('fs')
 
 
 $(document).ready(function(){
 
 
   var calculation = "";
+  var user_name = "user";
   
-  
+  $("#name-button").click(function(){
+    user_name = $('#name').val();
+    $('#name-row').remove();
+  });
+
   $('button').click(function(){
    
     var button_val = $(this).val();
@@ -29,17 +33,11 @@ $(document).ready(function(){
       //var info = split_calculation(calculation, operator_indices);
       var Obj = new bigeval();
       var doneCalc = Obj.exec(calculation);
-      $('#output').append("<p> user: " + calculation + " = "+ doneCalc + "</p>");
+      $('#output').append("<p>" + user_name + ":" + calculation + " = "+ doneCalc + "</p>");
       // add to database
 
-      var content = calculation + " = " + doneCalc;
-      try {
-        const data = fs.writeFileSync('/Users/flavio/test.txt', content)
-        //file written successfully
-      } catch (err) {
-        console.error(err)
-      }
- 
+      var content = JSON.stringify(calculation + " = " + doneCalc);
+
       
       calculation = "";
       
@@ -65,7 +63,7 @@ $(document).ready(function(){
 
 });
   
-  
+
 
 
 ReactDOM.render(
