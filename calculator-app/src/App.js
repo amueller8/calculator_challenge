@@ -8,7 +8,9 @@ import './App.css';
 
 /*
 ideally i would make calculator buttons react components,
-i had pivoted from a different idea so rn they are just normal buttons
+i had pivoted from a different idea so rn they are just normal buttons.
+but what would be nice about components beyond just reusability is actually
+being able to use their proprs (ie have the value stored/saved, etc etc)
 */
 function App() {
 

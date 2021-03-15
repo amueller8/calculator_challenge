@@ -8,6 +8,21 @@
   
 }
 
+#name-button{
+  max-width: 30%;
+}
+
+label{
+  padding: 2px;
+}
+
+input[type="text"]{
+  border-radius: 2px;
+  border: 1px solid lightgrey;
+  margin-left: 2%;
+  margin-right: 2%;
+}
+
 .calculator{
   margin-top: 5%;
   width: 75%;

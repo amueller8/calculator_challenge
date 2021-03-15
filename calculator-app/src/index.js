@@ -17,7 +17,7 @@ $(document).ready(function(){
   
   $("#name-button").click(function(){
     user_name = $('#name').val();
-    $('#name-row').remove();
+    //$('#name-row').remove();
   });
 
   $('button').click(function(){
@@ -33,7 +33,7 @@ $(document).ready(function(){
       //var info = split_calculation(calculation, operator_indices);
       var Obj = new bigeval();
       var doneCalc = Obj.exec(calculation);
-      $('#output').append("<p>" + user_name + ":" + calculation + " = "+ doneCalc + "</p>");
+      $('#output').append("<p>" + user_name + ": " + calculation + " = "+ doneCalc + "</p>");
       // add to database
 
       var content = JSON.stringify(calculation + " = " + doneCalc);
