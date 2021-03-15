@@ -1,6 +1,7 @@
 {
   "dependencies": {
-    "react": "^17.0.1",
-    "react-dom": "^17.0.1"
+    "bigeval": "^3.1.0",
+    "bootstrap": "^4.6.0",
+    "jquery": "^3.6.0"
   }
 }
